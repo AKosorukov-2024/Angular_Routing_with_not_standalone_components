@@ -1,0 +1,36 @@
+<main class="main">
+    <div class="component">
+        <table class="table" style="border: 1px; border-style: solid; border-color: black;">
+            <tbody>
+                <tr>
+                    <td colspan="2" class='apptitle'>
+                        Application is running
+                    </td>
+                </tr>
+                <tr>
+                    <td class='apptitle'>
+                        <!--app-first></app-first-->
+                        <!--a routerLink='/FirstComponent'>
+                            First Component
+                        </a-->
+                        <button class="button" (click)='FirstComponent()'>First Component</button>
+                    </td>
+                    <td class='apptitle'>
+                        <!--app-second></app-second-->
+                        <a [routerLink]="[{ outlets: {Second: ['SecondComponent']}}]">
+                            Second Component
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='apptitle'>
+                        <router-outlet></router-outlet>
+                    </td>
+                    <td class='apptitle'>
+                        <router-outlet name="Second" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
